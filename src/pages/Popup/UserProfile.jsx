@@ -22,7 +22,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>ID: {user.id}</Typography>
+          <Typography>ID: {user?.id ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The user's email address"
@@ -30,7 +30,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Email: {user.email}</Typography>
+          <Typography>Email: {user?.email ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The user's first name"
@@ -38,7 +38,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>First Name: {user.firstName}</Typography>
+          <Typography>First Name: {user?.firstName ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The user's last name"
@@ -46,7 +46,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Last Name: {user.lastName}</Typography>
+          <Typography>Last Name: {user?.lastName ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The user's phone number"
@@ -54,7 +54,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Phone Number: {user.phoneNumber}</Typography>
+          <Typography>Phone Number: {user?.phoneNumber ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The country code associated with the user's phone number"
@@ -62,7 +62,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Country Code: {user.countryCode}</Typography>
+          <Typography>Country Code: {user?.countryCode ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The country code determined from the user's IP address"
@@ -70,7 +70,9 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>IP Country Code: {user.ipCountryCode}</Typography>
+          <Typography>
+            IP Country Code: {user?.ipCountryCode ?? 'N/A'}
+          </Typography>
         </Tooltip>
         <Tooltip
           title="The user's age range"
@@ -78,7 +80,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Age Range: {user.ageRange}</Typography>
+          <Typography>Age Range: {user?.ageRange ?? 'N/A'}</Typography>
         </Tooltip>
       </AccordionDetails>
     </Accordion>
@@ -94,7 +96,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Account Type: {user.accountType}</Typography>
+          <Typography>Account Type: {user?.accountType ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The user's invite code"
@@ -102,7 +104,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Invite Code: {user.inviteCode}</Typography>
+          <Typography>Invite Code: {user?.inviteCode ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="Multiplier applied to worker's pay"
@@ -111,7 +113,7 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Worker Pay Multiplier: {user.workerPayMultiplier}
+            Worker Pay Multiplier: {user?.workerPayMultiplier ?? 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -121,7 +123,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Created Date: {new Date(user.createdDate).toLocaleString()}
+            Created Date:{' '}
+            {user?.createdDate
+              ? new Date(user.createdDate).toLocaleString()
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -130,7 +135,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Account Role: {user.accountRole}</Typography>
+          <Typography>Account Role: {user?.accountRole ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="Is customer review enabled for the user?"
@@ -139,7 +144,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Customer Review Enabled: {String(user.customerReviewEnabled)}
+            Customer Review Enabled:{' '}
+            {user?.customerReviewEnabled !== undefined
+              ? String(user.customerReviewEnabled)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -148,7 +156,9 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Google OAuth ID: {user.googleOAuthId}</Typography>
+          <Typography>
+            Google OAuth ID: {user?.googleOAuthId ?? 'N/A'}
+          </Typography>
         </Tooltip>
         <Tooltip
           title="The user's Slack ID for workers"
@@ -156,7 +166,9 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Worker Slack ID: {user.workerSlackId}</Typography>
+          <Typography>
+            Worker Slack ID: {user?.workerSlackId ?? 'N/A'}
+          </Typography>
         </Tooltip>
         <Tooltip
           title="The user's Scale Discourse ID"
@@ -164,7 +176,9 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Scale Discourse ID: {user.scaleDiscourseId}</Typography>
+          <Typography>
+            Scale Discourse ID: {user?.scaleDiscourseId ?? 'N/A'}
+          </Typography>
         </Tooltip>
         <Tooltip
           title="The current status of the worker"
@@ -172,7 +186,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Worker Status: {user.workerStatus}</Typography>
+          <Typography>Worker Status: {user?.workerStatus ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="The account's credit in cents"
@@ -181,7 +195,7 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Account Credit Cents: {user.accountCreditCents}
+            Account Credit Cents: {user?.accountCreditCents ?? 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -192,7 +206,9 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Last Online Datetime:{' '}
-            {new Date(user.lastOnlineDatetime).toLocaleString()}
+            {user?.lastOnlineDatetime
+              ? new Date(user.lastOnlineDatetime).toLocaleString()
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -202,7 +218,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Last Active: {new Date(user.lastActive).toLocaleString()}
+            Last Active:{' '}
+            {user?.lastActive
+              ? new Date(user.lastActive).toLocaleString()
+              : 'N/A'}
           </Typography>
         </Tooltip>
       </AccordionDetails>
@@ -232,7 +251,26 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Primary Projects: {user.tieredAssignedProjects?.primary.join(', ')}
+            Primary Projects:{' '}
+            {user?.tieredAssignedProjects?.primary &&
+            user.tieredAssignedProjects.primary.length > 0
+              ? user.tieredAssignedProjects.primary.map((project, index) => (
+                  <span key={project?.projectId || index}>
+                    {idJson[project?.projectId] ??
+                      project?.projectName ??
+                      project?.projectId ??
+                      'Unknown Project'}{' '}
+                    (Review Level:{' '}
+                    {project?.reviewLevel !== undefined
+                      ? project.reviewLevel
+                      : 'N/A'}
+                    )
+                    {index < user.tieredAssignedProjects.primary.length - 1
+                      ? ', '
+                      : ''}
+                  </span>
+                ))
+              : 'None'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -243,7 +281,25 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Secondary Projects:{' '}
-            {user.tieredAssignedProjects?.secondary.join(', ')}
+            {user?.tieredAssignedProjects?.secondary &&
+            user.tieredAssignedProjects.secondary.length > 0
+              ? user.tieredAssignedProjects.secondary.map((project, index) => (
+                  <span key={project?.projectId || index}>
+                    {idJson[project?.projectId] ??
+                      project?.projectName ??
+                      project?.projectId ??
+                      'Unknown Project'}{' '}
+                    (Review Level:{' '}
+                    {project?.reviewLevel !== undefined
+                      ? project.reviewLevel
+                      : 'N/A'}
+                    )
+                    {index < user.tieredAssignedProjects.secondary.length - 1
+                      ? ', '
+                      : ''}
+                  </span>
+                ))
+              : 'None'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -254,7 +310,25 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Tertiary Projects:{' '}
-            {user.tieredAssignedProjects?.tertiary.join(', ')}
+            {user?.tieredAssignedProjects?.tertiary &&
+            user.tieredAssignedProjects.tertiary.length > 0
+              ? user.tieredAssignedProjects.tertiary.map((project, index) => (
+                  <span key={project?.projectId || index}>
+                    {idJson[project?.projectId] ??
+                      project?.projectName ??
+                      project?.projectId ??
+                      'Unknown Project'}{' '}
+                    (Review Level:{' '}
+                    {project?.reviewLevel !== undefined
+                      ? project.reviewLevel
+                      : 'N/A'}
+                    )
+                    {index < user.tieredAssignedProjects.tertiary.length - 1
+                      ? ', '
+                      : ''}
+                  </span>
+                ))
+              : 'None'}
           </Typography>
         </Tooltip>
       </AccordionDetails>
@@ -283,7 +357,7 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Team Role: {user.teamRole}</Typography>
+          <Typography>Team Role: {user?.teamRole ?? 'N/A'}</Typography>
         </Tooltip>
         <Tooltip
           title="Task types the user can edit"
@@ -292,7 +366,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Can Edit Task Types: {user.canEditTaskTypes.join(', ')}
+            Can Edit Task Types:{' '}
+            {Array.isArray(user?.canEditTaskTypes)
+              ? user.canEditTaskTypes.join(', ')
+              : 'None'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -302,7 +379,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Training Rewards Eligible: {String(user.trainingRewardsEligible)}
+            Training Rewards Eligible:{' '}
+            {user?.trainingRewardsEligible !== undefined
+              ? String(user.trainingRewardsEligible)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -313,7 +393,7 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Training Rewards Required Earnings:{' '}
-            {user.trainingRewardsRequiredEarnings}
+            {user?.trainingRewardsRequiredEarnings ?? 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -323,7 +403,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Can Access Lidar: {String(user.canAccessLidar)}
+            Can Access Lidar:{' '}
+            {user?.canAccessLidar !== undefined
+              ? String(user.canAccessLidar)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -333,7 +416,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Phone Number Verified: {String(user.phoneNumberVerified)}
+            Phone Number Verified:{' '}
+            {user?.phoneNumberVerified !== undefined
+              ? String(user.phoneNumberVerified)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -344,7 +430,9 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Requires Onboarding Profiling:{' '}
-            {String(user.requiresOnboardingProfiling)}
+            {user?.requiresOnboardingProfiling !== undefined
+              ? String(user.requiresOnboardingProfiling)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -355,7 +443,9 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Onboarding Profiling Completed:{' '}
-            {String(user.onboardingProfilingCompleted)}
+            {user?.onboardingProfilingCompleted !== undefined
+              ? String(user.onboardingProfilingCompleted)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -366,7 +456,9 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Onboarding Profiling Worker Skills Pending:{' '}
-            {String(user.onboardingProfilingWorkerSkillsPending)}
+            {user?.onboardingProfilingWorkerSkillsPending !== undefined
+              ? String(user.onboardingProfilingWorkerSkillsPending)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -376,13 +468,14 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Intro Course Completed: {String(user.introCourseCompleted)}
+            Intro Course Completed:{' '}
+            {user?.introCourseCompleted !== undefined
+              ? String(user.introCourseCompleted)
+              : 'N/A'}
           </Typography>
         </Tooltip>
       </AccordionDetails>
     </Accordion>
-
-    {/* Continue adding tooltips for other sections in a similar manner */}
 
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -419,7 +512,7 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Server-Side Request ID:{' '}
-            {user.lastEmptyQueueEvent?.serverSideRequestId}
+            {user?.lastEmptyQueueEvent?.serverSideRequestId ?? 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -428,7 +521,9 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>User ID: {user.lastEmptyQueueEvent?.userId}</Typography>
+          <Typography>
+            User ID: {user?.lastEmptyQueueEvent?.userId ?? 'N/A'}
+          </Typography>
         </Tooltip>
         <Tooltip
           title="The active worker team during the event"
@@ -437,7 +532,8 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Active Worker Team: {user.lastEmptyQueueEvent?.activeWorkerTeam}
+            Active Worker Team:{' '}
+            {user?.lastEmptyQueueEvent?.activeWorkerTeam ?? 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -448,7 +544,9 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Requested At:{' '}
-            {new Date(user.lastEmptyQueueEvent?.requestedAt).toLocaleString()}
+            {user?.lastEmptyQueueEvent?.requestedAt
+              ? new Date(user.lastEmptyQueueEvent.requestedAt).toLocaleString()
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -459,26 +557,32 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Current Primary Team Assignments:{' '}
-            {user.lastEmptyQueueEvent?.currentPrimaryTeamAssignments?.map(
-              (project, index) => (
-                <span key={index}>
-                  {idJson[project.projectId]
-                    ? idJson[project.projectId]
-                    : project.projectName || project.projectId}{' '}
-                  (Review Level:{' '}
-                  {project.reviewLevel !== undefined
-                    ? project.reviewLevel
-                    : 'N/A'}
+            {Array.isArray(
+              user?.lastEmptyQueueEvent?.currentPrimaryTeamAssignments
+            ) &&
+            user.lastEmptyQueueEvent.currentPrimaryTeamAssignments.length > 0
+              ? user.lastEmptyQueueEvent.currentPrimaryTeamAssignments.map(
+                  (project, index) => (
+                    <span key={project?.projectId || index}>
+                      {idJson[project?.projectId] ??
+                        project?.projectName ??
+                        project?.projectId ??
+                        'Unknown Project'}{' '}
+                      (Review Level:{' '}
+                      {project?.reviewLevel !== undefined
+                        ? project.reviewLevel
+                        : 'N/A'}
+                      )
+                      {index <
+                      user.lastEmptyQueueEvent.currentPrimaryTeamAssignments
+                        .length -
+                        1
+                        ? ', '
+                        : ''}
+                    </span>
                   )
-                  {index <
-                  user.lastEmptyQueueEvent?.currentPrimaryTeamAssignments
-                    ?.length -
-                    1
-                    ? ', '
-                    : ''}
-                </span>
-              )
-            )}
+                )
+              : 'None'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -489,26 +593,32 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Current Secondary Team Assignments:{' '}
-            {user.lastEmptyQueueEvent?.currentSecondaryTeamAssignments?.map(
-              (project, index) => (
-                <span key={index}>
-                  {idJson[project.projectId]
-                    ? idJson[project.projectId]
-                    : project.projectName || project.projectId}{' '}
-                  (Review Level:{' '}
-                  {project.reviewLevel !== undefined
-                    ? project.reviewLevel
-                    : 'N/A'}
+            {Array.isArray(
+              user?.lastEmptyQueueEvent?.currentSecondaryTeamAssignments
+            ) &&
+            user.lastEmptyQueueEvent.currentSecondaryTeamAssignments.length > 0
+              ? user.lastEmptyQueueEvent.currentSecondaryTeamAssignments.map(
+                  (project, index) => (
+                    <span key={project?.projectId || index}>
+                      {idJson[project?.projectId] ??
+                        project?.projectName ??
+                        project?.projectId ??
+                        'Unknown Project'}{' '}
+                      (Review Level:{' '}
+                      {project?.reviewLevel !== undefined
+                        ? project.reviewLevel
+                        : 'N/A'}
+                      )
+                      {index <
+                      user.lastEmptyQueueEvent.currentSecondaryTeamAssignments
+                        .length -
+                        1
+                        ? ', '
+                        : ''}
+                    </span>
                   )
-                  {index <
-                  user.lastEmptyQueueEvent?.currentSecondaryTeamAssignments
-                    .length -
-                    1
-                    ? ', '
-                    : ''}
-                </span>
-              )
-            )}
+                )
+              : 'None'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -518,25 +628,29 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography component={'span'}>
-            Empty Queue Reasons:
-            {Object.entries(user.lastEmptyQueueEvent?.emptyQueueReasons).map(
-              ([projectId, reviewLevels]) => (
-                <div key={projectId}>
-                  {idJson[projectId] ? idJson[projectId] : projectId}:
-                  {Object.entries(reviewLevels).map(([reviewLevel, reason]) => (
-                    <div key={reviewLevel}>
-                      {reviewLevel}: {reason}
+            Empty Queue Reasons:{' '}
+            {user?.lastEmptyQueueEvent?.emptyQueueReasons &&
+            Object.keys(user.lastEmptyQueueEvent.emptyQueueReasons).length > 0
+              ? Object.entries(user.lastEmptyQueueEvent.emptyQueueReasons).map(
+                  ([projectId, reviewLevels]) => (
+                    <div key={projectId}>
+                      {idJson[projectId] ?? projectId}:
+                      {reviewLevels &&
+                        Object.entries(reviewLevels).map(
+                          ([reviewLevel, reason]) => (
+                            <div key={reviewLevel}>
+                              {reviewLevel}: {reason ?? 'N/A'}
+                            </div>
+                          )
+                        )}
                     </div>
-                  ))}
-                </div>
-              )
-            )}
+                  )
+                )
+              : 'None'}
           </Typography>
         </Tooltip>
       </AccordionDetails>
     </Accordion>
-
-    {/* Continue adding tooltips for other sections in a similar manner */}
 
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -550,7 +664,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Allowed Task Types: {user.allowedTaskTypes.join(', ')}
+            Allowed Task Types:{' '}
+            {Array.isArray(user?.allowedTaskTypes)
+              ? user.allowedTaskTypes.join(', ')
+              : 'None'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -559,7 +676,10 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Is Reviewer: {String(user.isReviewer)}</Typography>
+          <Typography>
+            Is Reviewer:{' '}
+            {user?.isReviewer !== undefined ? String(user.isReviewer) : 'N/A'}
+          </Typography>
         </Tooltip>
         <Tooltip
           title="Is the user a Remotask Pro?"
@@ -567,7 +687,12 @@ const UserProfile = ({ user, idJson }) => (
           disableInteractive
           arrow
         >
-          <Typography>Is Remotask Pro: {String(user.isRemotaskPro)}</Typography>
+          <Typography>
+            Is Remotask Pro:{' '}
+            {user?.isRemotaskPro !== undefined
+              ? String(user.isRemotaskPro)
+              : 'N/A'}
+          </Typography>
         </Tooltip>
         <Tooltip
           title="Does the user have permission to provide training feedback?"
@@ -577,7 +702,9 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Has Training Feedback Permission:{' '}
-            {String(user.hasTrainingFeedbackPermission)}
+            {user?.hasTrainingFeedbackPermission !== undefined
+              ? String(user.hasTrainingFeedbackPermission)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -587,7 +714,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Force SEON Transaction: {String(user.forceSeonTransaction)}
+            Force SEON Transaction:{' '}
+            {user?.forceSeonTransaction !== undefined
+              ? String(user.forceSeonTransaction)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -598,7 +728,9 @@ const UserProfile = ({ user, idJson }) => (
         >
           <Typography>
             Persona Verification Course Bypass:{' '}
-            {String(user.personaVerificationCourseBypass)}
+            {user?.personaVerificationCourseBypass !== undefined
+              ? String(user.personaVerificationCourseBypass)
+              : 'N/A'}
           </Typography>
         </Tooltip>
         <Tooltip
@@ -608,7 +740,10 @@ const UserProfile = ({ user, idJson }) => (
           arrow
         >
           <Typography>
-            Reverification Info: {JSON.stringify(user.reverificationInfo)}
+            Reverification Info:{' '}
+            {user?.reverificationInfo !== undefined
+              ? JSON.stringify(user.reverificationInfo)
+              : 'N/A'}
           </Typography>
         </Tooltip>
       </AccordionDetails>
@@ -619,19 +754,25 @@ const UserProfile = ({ user, idJson }) => (
         <Typography variant="h5">Feature Flags</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        {Object.entries(user.featureFlags).map(([flag, value], index) => (
-          <Tooltip
-            key={index}
-            title={`Feature flag: ${flag}`}
-            placement="top-start"
-            disableInteractive
-            arrow
-          >
-            <Typography>
-              {flag}: {String(value)}
-            </Typography>
-          </Tooltip>
-        ))}
+        {user?.featureFlags &&
+        typeof user.featureFlags === 'object' &&
+        Object.keys(user.featureFlags).length > 0 ? (
+          Object.entries(user.featureFlags).map(([flag, value], index) => (
+            <Tooltip
+              key={index}
+              title={`Feature flag: ${flag}`}
+              placement="top-start"
+              disableInteractive
+              arrow
+            >
+              <Typography>
+                {flag}: {String(value)}
+              </Typography>
+            </Tooltip>
+          ))
+        ) : (
+          <Typography>No Feature Flags Available.</Typography>
+        )}
       </AccordionDetails>
     </Accordion>
   </div>

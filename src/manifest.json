@@ -3,7 +3,7 @@
   "name": "Outliers Assistant",
   "description": "Your assistant for Outliers, providing additional details for your account",
   "background": { "service_worker": "background.bundle.js" },
-  "permissions": ["storage", "scripting", "activeTab"],
+  "permissions": ["scripting", "activeTab"],
   "host_permissions": ["http://*/*", "https://*/*", "<all_urls>"],
   "action": {
     "default_popup": "popup.html",

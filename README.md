@@ -1,4 +1,4 @@
- <img src="src/assets/img/icon-128.png" width="64"/>
+ <img src="chrome-extension/public/icon-128.png" width="64"/>
 
 # Outliers Assistant
 
@@ -11,45 +11,13 @@ The extension needs a tab with Outliers open to access info, but you don't need 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
-
-What things you need to utilize this project and how to install them
-
-```
-NodeJS v21.7.0 - https://nodejs.org/en/download/package-manager/current
-```
-
-### Installing
-
-Clone the project to your system or download the zip
-
-```
-git clone https://github.com/kymotsujason/outliers-assistant.git
-```
-
-Install the dependencies from inside the root project folder
-
-```
-npm install
-```
-
-Run the dev server
-
-```
-npm run start
-```
-
-To load it, follow the instructions [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
-
-## Deployment
-
-Use npm run build, then to load it, follow the instructions [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
+[See here](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite?tab=readme-ov-file#getting-started) for in-depth and extensive instructions
 
 ## Built With
 
-* [Chrome Extension (MV3) Boilerplate with React 18 and Webpack 5](https://github.com/lxieyang/chrome-extension-boilerplate-react?tab=readme-ov-file) - The boilerplate used
+* [Chrome Extension Boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite) - A boilerplate that helps with creating Chrome/Firefox extensions usiung React and Typescript
 
 ## Contributing
 
@@ -61,8 +29,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Michael Xieyang Liu** - *Chrome Extension boilerplate* - [lxieyang](https://github.com/lxieyang)
-
+* **Jonghakseo** - *Boilerplate* - [Jonghakseo](https://github.com/Jonghakseo)
 * **Jason Yue** - *Chrome Extension development* - [kymotsujason](https://github.com/kymotsujason)
 
 See also the list of [contributors](https://github.com/outliers-assistant/contributors) who participated in this project.
@@ -73,5 +40,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Michael Xieyang Liu for this amazing boilerplate
-* [gulshan_jakhon_](https://www.reddit.com/user/gulshan_jakhon_/) from reddit for finding the json key [here](https://www.reddit.com/r/outlier_ai/comments/1hwiryn/how_to_check_your_profile_status_in_outlier/)
+* [Jonghakseo](https://github.com/Jonghakseo) chrome extension boilerplate with a working content script
+* [gulshan_jakhon_](https://www.reddit.com/user/gulshan_jakhon_/) from reddit for finding the network key [here](https://www.reddit.com/r/outlier_ai/comments/1hwiryn/how_to_check_your_profile_status_in_outlier/)

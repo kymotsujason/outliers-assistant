@@ -1,20 +1,11 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "ESLint",
+  "extends": "./packages/tsconfig/base.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "noImplicitAny": false,
     "noEmit": false,
-    "jsx": "react"
+    "target": "ESNext"
   },
-  "include": ["src"],
-  "exclude": ["build", "node_modules"]
+  "include": ["eslint.config.ts"]
 }

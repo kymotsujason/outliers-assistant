@@ -11,7 +11,9 @@ interface AccordionSectionProps {
 const AccordionSection: React.FC<AccordionSectionProps> = React.memo(({ title, children, defaultExpanded = false }) => (
   <Accordion defaultExpanded={defaultExpanded}>
     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-      <Typography variant="h5">{title}</Typography>
+      <Typography variant="subtitle1" sx={{ fontSize: '1.05rem', fontWeight: 600 }}>
+        {title}
+      </Typography>
     </AccordionSummary>
     <AccordionDetails>{children}</AccordionDetails>
   </Accordion>

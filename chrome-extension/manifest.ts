@@ -23,8 +23,8 @@ const manifest = {
   name: '__MSG_extensionName__',
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
-  host_permissions: ['https://app.outlier.ai/*'],
-  permissions: ['cookies', 'tabs'],
+  host_permissions: ['https://*.outlier.ai/*', 'https://outlier.ai/*'],
+  permissions: ['cookies', 'tabs', 'storage'],
   background: {
     service_worker: 'background.js',
     type: 'module',

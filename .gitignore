@@ -24,3 +24,17 @@ tsconfig.tsbuildinfo
 
 # compiled
 **/tailwind-output.css
+
+CLAUDE.md
+.claude/
+.bashrc
+.bash_profile
+.gitconfig
+.gitmodules
+.idea
+.mcp.json
+.profile
+.ripgreprc
+.vscode
+.zshrc
+.zprofile
